@@ -1,7 +1,6 @@
 # Machine Learning Journey 🚀
 
-پیاده‌سازی گام‌به‌گام مفاهیم یادگیری ماشین با Python
-از مبانی تا شبکه‌های عصبی پیشرفته
+Step-by-step implementation of machine learning concepts with Python — from foundations to advanced neural networks
 
 ---
 
