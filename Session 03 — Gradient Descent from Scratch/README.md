@@ -31,9 +31,6 @@
 | Standardization | `(X - mean) / std` — makes features comparable for stable GD |
 | `np.c_[bias, X]` | Concatenates bias column with features |
 | `theta.ravel()` | Flattens theta array to extract b and a |
-## 🔧 Theta Update Formula
-
-```python
 # Gradient Descent Update Rule:
 theta_new = theta_old - learning_rate * gradient
 
