@@ -41,18 +41,24 @@
 
 ## 📈 Cost Function Analysis
 - House prices: MSE dropped from 770 → 46.66 in 25 iterations, converging steadily
-- Random data: MSE increased from 21.08 → 21.10 across 20 iterations — learning rate too small for this data scale
-- Both datasets showed convergence or near-convergence within few iterations
-- House prices data had small X values (100-500) but large y values, requiring very small learning rate (0.00001)
+- Random data: MSE increased from 21.08 → 21.10 across all 20 iterations — **model failed to converge**
+- Despite many attempts, couldn't find a learning rate and max_iter combination that made the cost decrease on random data
+- This demonstrated the real-world challenge of gradient descent: **data from `make_regression` required standardization** that wasn't applied, causing unstable gradients
+
+## ⚠️ Challenges Faced
+- Cost function kept increasing regardless of how learning rate was adjusted
+- Tried various learning rates (0.00001, 0.0001, 0.001, 0.01) — none produced stable convergence
+- Realized that without standardizing `make_regression` data, gradient descent becomes highly unstable
+- Manually tuning hyperparameters by hand is difficult and inefficient — this is why libraries like sklearn automate this process
 
 ## 🧠 Key Takeaways
 - `X_bias @ theta = b + a*X` — the bias column is the mathematical trick for intercept
 - Gradient descent computes `X_bias.T @ error` — transpose aligns dimensions: (2,n) @ (n,) = (2,)
 - `theta = theta - gradient * learning_rate` — parameters move opposite to gradient direction
-- Learning rate must be tuned: 0.00001 worked for house prices, 0.001 was too high for random data
-- Cost function should decrease — if it increases, reduce learning rate or standardize data
-- `sklearn.LinearRegression()` uses Normal Equation — no standardization or learning rate needed
-- Manual gradient descent helps understand what happens inside `model.fit()`
-- `make_regression` generates data with different scales — needs standardization for stable GD
-- `theta.ravel()` converts (2,1) array to 1D to extract b and a values
-- Even 20-25 iterations can find reasonable parameters on small datasets
+- Learning rate must be carefully tuned — too high causes divergence, too low causes painfully slow convergence
+- **Data standardization is essential** for gradient descent to work properly on arbitrary datasets
+- `sklearn.LinearRegression()` avoids all these issues by using Normal Equation instead
+- Failed convergence is a valuable learning experience — it teaches why ML libraries are necessary
+- Manual hyperparameter tuning by trial and error is impractical for real-world problems
+- `make_regression` data requires standardization because features and targets have very different scales
+- Even when GD doesn't work perfectly, the mathematical principles behind it are sound
