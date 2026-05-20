@@ -49,7 +49,7 @@
 | 2 | 1.00 | 1.00 | 1.00 |
 
 
-##🧠 Key Takeaways
+## 🧠 Key Takeaways
 KNN doesn't "learn" weights — it just memorizes data and compares distances
 
 n_neighbors=1 → noisy; n_neighbors=50 → underfits; odd numbers avoid ties
