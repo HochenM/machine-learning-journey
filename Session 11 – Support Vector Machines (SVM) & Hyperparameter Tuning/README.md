@@ -1,88 +1,103 @@
-📘 Session 11 – Support Vector Machines (SVM) & Hyperparameter Tuning
-🚀 Overview
+# 📘 Session 11 – Support Vector Machines (SVM) & Hyperparameter Tuning
 
-This repository contains my learning and implementation of Support Vector Machines (SVM) and hyperparameter tuning techniques including GridSearchCV and RandomizedSearchCV.
+## 🚀 Overview
+This repository contains my implementation and learning of **Support Vector Machines (SVM)** and **hyperparameter tuning techniques** such as **GridSearchCV** and **RandomizedSearchCV**.
 
-The session includes:
+The session includes theoretical understanding, model comparison, feature engineering, and a real-world Bitcoin price prediction case study.
 
-Theoretical understanding of SVM
-Comparison with Logistic Regression
-Kernel tricks (Linear, RBF)
-Model evaluation using classification metrics
-Hyperparameter optimization
-Time-series based BTC prediction case study
-Proper ML pipeline improvements (scaling + feature engineering)
-📌 Topics Covered
-🔹 Support Vector Machines (SVM)
-Hyperplane, margin, and support vectors
-Hard margin vs Soft margin
-Kernel trick (Linear, Polynomial, RBF)
-C and Gamma parameters
-NuSVC concept
-🔹 Model Comparison
-Logistic Regression vs SVM
-Linear SVM vs Kernel SVM
-Performance evaluation using:
-Accuracy
-Precision / Recall / F1-score
-Confusion Matrix
-🔹 Hyperparameter Tuning
-GridSearchCV (exhaustive search)
-RandomizedSearchCV (random search)
-Cross-validation (StratifiedKFold)
-🔹 Real-world Case Study
-Bitcoin price movement prediction
-Feature engineering:
-Returns
-Moving averages (SMA 7 & 30)
-Time features (Year, Month, Day)
-Time-series train/test split (no shuffling)
-🧠 Key Insights Learned
-SVM performance heavily depends on feature scaling
-RBF kernel is powerful for nonlinear data
-Time-series data must avoid shuffling to prevent leakage
-Absolute price values are not useful → stationary features perform better
-Hyperparameter tuning significantly improves model performance
-📊 Models Used
-Logistic Regression
-Linear SVM (LinearSVC)
-Kernel SVM (SVC with RBF, poly, sigmoid)
-GridSearchCV optimized SVM
-RandomizedSearchCV Logistic Regression
-⚙️ Tech Stack
-Python 🐍
-NumPy
-Pandas
-Matplotlib / Seaborn
-Scikit-learn
-yfinance (for BTC data)
-📁 Project Structure
-Session-11-SVM-Hyperparameter-Tuning/
-│
-├── BTC.csv
-├── session11_svm.ipynb
-├── README.md
-▶️ How to Run
-# Clone repository
-git clone https://github.com/your-username/your-repo.git
+---
 
-# Install dependencies
-pip install numpy pandas scikit-learn matplotlib seaborn yfinance
+## 📌 Topics Covered
 
-# Run notebook
-jupyter notebook
-📈 Results Summary
-SVM (RBF kernel) outperformed Logistic Regression on most datasets
-Hyperparameter tuning improved accuracy significantly
-Feature scaling + engineered ratios improved BTC prediction stability
-⚠️ Important Lessons
-❌ Using raw financial prices causes poor generalization
-❌ Ignoring scaling breaks SVM performance
-❌ Random train/test split in time-series leads to data leakage
-✅ Stationary features improve model stability
-✅ Pipelines ensure clean ML workflows
-🔥 Future Improvements
-Add LSTM / Deep Learning comparison
-Use more advanced feature engineering (RSI, MACD)
-Apply walk-forward validation for BTC prediction
-Deploy model as API (Flask/FastAPI)
+### 🔹 Support Vector Machines (SVM)
+- Hyperplane and decision boundary
+- Support vectors and margin maximization
+- Hard margin vs soft margin
+- Kernel trick (Linear, Polynomial, RBF)
+- Regularization parameter (C)
+- Gamma parameter behavior
+- NuSVC concept
+
+---
+
+### 🔹 Model Comparison
+- Logistic Regression vs SVM
+- Linear SVM vs Kernel SVM
+- Evaluation using:
+  - Accuracy
+  - Precision
+  - Recall
+  - F1-score
+  - Confusion matrix
+
+---
+
+### 🔹 Hyperparameter Tuning
+- GridSearchCV (exhaustive search)
+- RandomizedSearchCV (random search)
+- Cross-validation using StratifiedKFold
+- Best parameter selection and model refitting
+
+---
+
+### 🔹 Time Series Case Study (BTC Prediction)
+- Bitcoin price direction prediction
+- Feature engineering:
+  - Returns
+  - Simple Moving Averages (SMA 7, SMA 30)
+  - Time-based features (Year, Month, Day, Weekday)
+- Train/test split without shuffling (time-series safe)
+
+---
+
+## 🧠 Key Learnings
+
+- SVM is highly sensitive to feature scaling
+- RBF kernel handles non-linear patterns effectively
+- Time-series data must not be randomly shuffled
+- Raw price values are not informative → use relative/ratio features
+- Proper feature engineering significantly improves performance
+- Pipelines prevent data leakage and improve workflow safety
+
+---
+
+## 📊 Models Used
+
+- Logistic Regression
+- Linear SVM (LinearSVC)
+- Kernel SVM (SVC with linear, RBF, poly, sigmoid kernels)
+- GridSearchCV optimized SVM model
+- RandomizedSearchCV (Logistic Regression tuning)
+
+---
+
+## ⚙️ Tech Stack
+
+- Python 🐍
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- yfinance
+
+---
+
+## 📈 Results Summary
+SVM (RBF kernel) performed better than Logistic Regression in most cases
+Hyperparameter tuning improved model performance significantly
+Feature scaling and engineered ratios improved BTC prediction stability
+
+## ⚠️ Important Insights
+❌ Raw price features lead to poor generalization
+❌ SVM without scaling performs poorly
+❌ Random split is invalid for time-series data
+✅ Stationary features improve predictive power
+✅ Pipelines ensure clean and safe ML workflow
+
+## 🔥 Future Improvements
+Add LSTM / deep learning comparison
+Include advanced indicators (RSI, MACD)
+Use walk-forward validation for time-series
+Deploy model using Flask or FastAPI
+
