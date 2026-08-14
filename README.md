@@ -32,7 +32,7 @@ Python • NumPy • Pandas • Matplotlib • Scikit-learn • TensorFlow • K
 
 ## 👤 About Me
 
-Cellular & Molecular Biology student at Shahid Beheshti University (GPA: 3.98/4.0) bridging biology and AI. Experienced in protein structure prediction (AlphaFold), molecular docking, and applying ML to bioinformatics problems. Building this repository to master ML end-to-end — from algorithms to deployment.
+Cellular & Molecular Biology student  (GPA: 3.98/4.0) bridging biology and AI. Experienced in protein structure prediction (AlphaFold), molecular docking, and applying ML to bioinformatics problems. Building this repository to master ML end-to-end — from algorithms to deployment.
 
 **Seeking:** Graduate research positions in Bioinformatics, AI-driven drug discovery, and ML applications in life sciences.
 
